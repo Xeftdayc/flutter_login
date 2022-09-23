@@ -1,5 +1,9 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import 'forgotpw_page.dart';
 
 class LoginPage extends StatefulWidget {
   final VoidCallback showRegisterPage;
@@ -50,21 +54,19 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               //Hello
-              // ignore: prefer_const_constructors
+
               Text(
                 'Hola Bienvenidos',
-                // ignore: prefer_const_constructors
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 36,
                 ),
               ),
-              // ignore: prefer_const_constructors
+
               SizedBox(height: 10),
-              // ignore: prefer_const_constructors
+
               Text(
                 'Welcome back, you\'ve been missed!',
-                // ignore: prefer_const_constructors
                 style: TextStyle(
                   fontSize: 20,
                 ),
@@ -97,7 +99,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 10,
               ),
 
-              //Password
+              //Password textfield
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: TextField(
@@ -118,6 +120,35 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
+
+              SizedBox(
+                height: 15,
+              ),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return ForgotPasswordPage();
+                        }));
+                      },
+                      child: Text(
+                        'Forgot Password?',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
               SizedBox(
                 height: 20,
               ),
